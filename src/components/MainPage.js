@@ -5,14 +5,16 @@ import TextButton from "./TextButton.js";
 export default function MainPage()
 {
     return <div className={'container'}>
-        <div className={'logoContainer'}>
-            <img className={'logo'} alt={'logo'} src={require('../resources/logo1.png')}/>
-        </div>
         <div className={'header'}>
-            <TextButton className={'headerOption'}>צור קשר</TextButton>
-            <TextButton className={'headerOption'}>אודות</TextButton>
-            <TextButton className={'headerOption'}>האירועים שלנו</TextButton>
-            <TextButton className={'headerOption'}>המלצות</TextButton>
+            <div className={'logoContainer'}>
+                <img className={'logo'} alt={'logo'} src={require('../resources/logo1.png')}/>
+            </div>
+            <div className={'headerOptions'}>
+                <TextButton onClick={() => alert('Hey')} className={'headerOption'}>צור קשר</TextButton>
+                <TextButton className={'headerOption'}>אודות</TextButton>
+                <TextButton className={'headerOption'}>האירועים שלנו</TextButton>
+                <TextButton className={'headerOption'}>המלצות</TextButton>
+            </div>
         </div>
         <div className={'body'}>
             <small className={'bodyText'} style={{fontFamily: 'Segoe Print'}}>MY - Productions</small>

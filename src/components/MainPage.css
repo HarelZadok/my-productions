@@ -13,35 +13,43 @@
 .header {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
     align-items: center;
-    height: 15vw;
-    width: 76vw;
-    background-color: #FFF;
+    justify-content: center;
+    height: 8vw;
+    width: 100vw;
+    /*background-color: goldenrod;*/
     gap: 5vw;
-    margin-right: 30vw;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+}
+
+.headerOptions {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10vw;
 }
 
 .headerOption {
     font-size: min(2.5vw, 28px);
-    color: #707070;
+    color: #000;
+    font-weight: 500;
 }
 
 .logoContainer {
-    position: absolute;
-    top: 0;
-    right: 9vw;
     display: inline-block;
     overflow: hidden;
-    border-bottom-left-radius: 4vw;
-    border-bottom-right-radius: 4vw;
-    z-index: 0;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    max-height: 8vw;
+    position: absolute;
+    right: 4vw;
+    top: 0;
 }
 
 .logo {
-    max-width: 15vw;
-    height: auto;
-    width: auto;
+    max-height: 8vw;
     transform: scale(1.5);
 }
 
@@ -66,7 +74,7 @@
     align-items: center;
     height: 3.8vw;
     width: 11vw;
-    background-color: #A79737;
+    background-color: #daa520;
     color: #FFFFFF;
     border: 1px solid #707070;
     border-radius: 1.4vw;
