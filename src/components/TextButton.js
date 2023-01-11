@@ -14,7 +14,7 @@ export default function TextButton(props) {
         setDefaultFontSize(window.getComputedStyle(textRef.current).fontSize);
     }, []);
 
-    return <div style={{width: "auto", height: 0, justifyContent: "center", alignContent: "center"}}>
+    return <div style={{width: "auto", height: "auto", justifyContent: "center", alignContent: "center"}}>
         <small
             onMouseOver={() => {if (shouldInteract(props)) interact(true, sets, args)}}
             onMouseOut={() => {if (shouldInteract(props)) interact(false, sets, args)}}
@@ -35,7 +35,7 @@ function shouldInteract(props) {
 
 function interact(mouseOver, sets, args) {
     if (mouseOver) {
-        sets.setOpacity(0.5);
+        sets.setOpacity(0.7);
         sets.setFontSize(args.defaultFontSize.substring(0, args.defaultFontSize.length - 2) * 1.2 + 'px');
     }
     else {
