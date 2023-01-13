@@ -1,55 +1,43 @@
 import './MainPage.css'
 import React from "react";
-import TextButton from "./TextButton.js";
 import Extra from "./Extra";
 import {Animator, batch, Fade, Move, MoveIn, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
+import arrowsDown from '../resources/arrows-down.svg';
+import TopBar from "./TopBar";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
 function TopPart() {
     return <ScrollPage>
-        <div className={'header'}>
-            <div className={'logoContainer'}>
-                <img className={'logo'} alt={'logo'} src={require('../resources/logo1.png')}/>
+        <Animator style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}} animation={FadeUp}>
+            <div className={'body_main'}>
+                <small className={'bodyText_main'} style={{fontFamily: 'Segoe Print'}}>MY - Productions</small>
+                <small className={'bodyText_main'}>"חלומות שהופכים מציאות"</small>
+                <small className={'bodyText_main'}>הפקות אירועים | השכרת ציוד לאירועים | ניהול אירועים</small>
+                <button className={'eventButton_main'}>בואו ונגשים פנטזיות</button>
             </div>
-            <div className={'headerOptions'}>
-                <div style={{width: '200px', justifyContent: 'center', alignItems: 'center',display: 'flex'}}>
-                    <TextButton className={'headerOption'}>צור קשר</TextButton>
+            <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: 20}}>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                    <small className={'contactUs_main'}>צור קשר</small>
+                    <img className={'arrowsDown_main'} src={arrowsDown} alt={'contact'}/>
                 </div>
-                <div style={{width: '200px', justifyContent: 'center', alignItems: 'center',display: 'flex'}}>
-                    <TextButton className={'headerOption'}>אודות</TextButton>
-                </div>
-                <div style={{width: '200px', justifyContent: 'center', alignItems: 'center',display: 'flex'}}>
-                    <TextButton className={'headerOption'}>האירועים שלנו</TextButton>
-                </div>
-                <div style={{width: '200px', justifyContent: 'center', alignItems: 'center',display: 'flex'}}>
-                    <TextButton className={'headerOption'}>המלצות</TextButton>
-                </div>
-            </div>
-        </div>
-        <Animator animation={FadeUp}>
-            <div className={'body'}>
-                <small className={'bodyText'} style={{fontFamily: 'Segoe Print'}}>MY - Productions</small>
-                <small className={'bodyText'}>"חלומות שהופכים מציאות"</small>
-                <small className={'bodyText'}>הפקות אירועים | השכרת ציוד לאירועים | ניהול אירועים</small>
-                <button className={'eventButton'}>בואו ונגשים פנטזיות</button>
-            </div>
+            </button>
         </Animator>
     </ScrollPage>
 }
 
 function BottomPart() {
     return <ScrollPage>
-        <div className={'footer'}>
-            <Animator animation={MoveIn(2000, 2000)}>
-                <div className={'extras'}>
-                    <div className={'extraList'}>
+        <div className={'footer_main'}>
+            <Animator animation={MoveIn(900, 100)}>
+                <div className={'extras_main'}>
+                    <div className={'extraList_main'}>
                         <Extra img={require('../resources/extra5.png')} text={'הפקות ברמה עולמית'}/>
                         <Extra img={require('../resources/extra7.png')} text={'זמינות'}/>
                         <Extra img={require('../resources/extra4.png')} text={'חשיבה מחוץ לקופסא'}/>
                         <Extra img={require('../resources/extra6.png')} text={'יצירת קשר עם ספקים'}/>
                     </div>
-                    <div className={'extraList'}>
+                    <div className={'extraList_main'}>
                         <Extra img={require('../resources/extra1.png')} text={'בכל מקום'}/>
                         <Extra img={require('../resources/extra2.png')} text={'פתרון בעיות'}/>
                         <Extra img={require('../resources/extra3.png')} text={'יעילות'}/>
@@ -58,13 +46,13 @@ function BottomPart() {
                     </div>
                 </div>
             </Animator>
-            <Animator animation={MoveIn(-2000, 2000)}>
-                <div className={'contact'}>
-                    <button className={'contactButton'}><img className={'contactImage'} alt={'facebook'} src={require('../resources/facebook.png')}/></button>
-                    <button className={'contactButton'}><img className={'contactImage'} alt={'instagram'} src={require('../resources/instagram.png')}/></button>
-                    <button className={'contactButton'}><img className={'contactImage'} alt={'email'} src={require('../resources/email.png')}/></button>
-                    <button className={'contactButton'}><img className={'contactImage'} alt={'phone'} src={require('../resources/phone.png')}/></button>
-                    <button className={'contactButton'}><img className={'contactImage'} alt={'whatsapp'} src={require('../resources/whatsapp.png')}/></button>
+            <Animator animation={MoveIn(-900, 100)}>
+                <div className={'contact_main'}>
+                    <button className={'contactButton_main'}><img className={'contactImage_main'} alt={'facebook'} src={require('../resources/facebook.png')}/></button>
+                    <button className={'contactButton_main'}><img className={'contactImage_main'} alt={'instagram'} src={require('../resources/instagram.png')}/></button>
+                    <button className={'contactButton_main'}><img className={'contactImage_main'} alt={'email'} src={require('../resources/email.png')}/></button>
+                    <button className={'contactButton_main'}><img className={'contactImage_main'} alt={'phone'} src={require('../resources/phone.png')}/></button>
+                    <button className={'contactButton_main'}><img className={'contactImage_main'} alt={'whatsapp'} src={require('../resources/whatsapp.png')}/></button>
                 </div>
             </Animator>
         </div>
@@ -73,10 +61,15 @@ function BottomPart() {
 
 export default function MainPage()
 {
-    return <div className={'container'}>
+    return <div className={'container_main'}>
         <ScrollContainer>
             <TopPart/>
             <BottomPart/>
         </ScrollContainer>
+        <TopBar/>
     </div>
+}
+
+function scrollToBottom() {
+    window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'})
 }

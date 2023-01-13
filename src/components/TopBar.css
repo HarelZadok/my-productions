@@ -1,0 +1,44 @@
+.header_topBar {
+    display: flex;
+    height: auto;
+    width: 100vw;
+    gap: 5vw;
+    flex-direction: row;
+    position: fixed;
+}
+
+.headerOptions_topBar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 10vw;
+    width: 100vw;
+    height: 100px;
+    margin-top: 30px;
+    background-color: black;
+}
+
+.headerOption_topBar {
+    font-size: min(2.3vw, 28px);
+    color: #FFFFFF;
+    font-weight: 500;
+    text-align: center;
+}
+
+.logoContainer_topBar {
+    display: inline-block;
+    overflow: hidden;
+    border-bottom-left-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    max-height: 200px;
+    position: absolute;
+    right: 2vw;
+    top: 0;
+    cursor: pointer;
+}
+
+.logo_topBar {
+    max-height: 200px;
+    transform: scale(1.5);
+}
