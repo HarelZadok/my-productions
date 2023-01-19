@@ -78,7 +78,7 @@
 .contactColumn_contact {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     height: 100%;
     gap: 20px;

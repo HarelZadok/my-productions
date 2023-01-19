@@ -1,7 +1,7 @@
 import './MainPage.css'
 import React from "react";
 import Extra from "./Extra";
-import {Animator, batch, Fade, Move, MoveIn, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
+import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
 
@@ -29,7 +29,7 @@ function TopPart() {
 function BottomPart() {
     return <ScrollPage>
         <div className={'footer_main'}>
-            <Animator animation={MoveIn(900, 100)}>
+            <Animator animation={batch(MoveIn(900, 100), MoveOut(900, 100))}>
                 <div className={'extras_main'}>
                     <div className={'extraList_main'}>
                         <Extra img={require('../resources/extra5.png')} text={'הפקות ברמה עולמית'}/>
