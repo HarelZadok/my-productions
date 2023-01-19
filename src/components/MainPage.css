@@ -14,18 +14,13 @@
     background-attachment: fixed;
 }
 
-.body_title_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .body_main {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 .bodyText_main {
@@ -34,6 +29,15 @@
     font-weight: bold;
     -webkit-text-stroke: .05em black;
     text-align: center;
+}
+
+.bodyTitle_main {
+    font-size: 1.4vw;
+    color: #FFFFFF;
+    font-weight: bold;
+    -webkit-text-stroke: .05em black;
+    text-align: center;
+    position: fixed;
 }
 
 .eventButton_main {
@@ -46,7 +50,7 @@
     color: #FFFFFF;
     border: .05em solid #707070;
     border-radius: 1vw;
-    margin-top: 4vh;
+    margin-top: 1vh;
     font-size: 1vw;
     font-weight: bold;
     letter-spacing: 0.001vw;
@@ -98,7 +102,7 @@
 
 .extras_main {
     width: 40vw;
-    height: 70vh;
+    height: 65vh;
     background-color: black;
     border-radius: 4vw;
     align-self: flex-end;
@@ -106,6 +110,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 1vh;
+    margin-right: 1vh;
 }
 
 .extraList_main {

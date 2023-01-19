@@ -1,28 +1,44 @@
 import './MainPage.css'
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Extra from "./Extra";
 import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
+// import {useScrollPercentage} from "react-scroll-percentage";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
-function TopPart() {
+function TopPart({scroll}) {
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.scrollY;
+        setScrollPosition(position);
+        console.log(scroll.toPrecision(2))
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return <ScrollPage>
-        <Animator style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}} animation={FadeUp}>
-            <div className={'body_main'}>
-                <small className={'bodyText_main'} style={{fontFamily: 'Segoe Print'}}>MY - Productions</small>
-                <small className={'bodyText_main'}>"חלומות שהופכים מציאות"</small>
+        <div className={'body_main'}>
+            <small className={'bodyTitle_main'} style={{fontFamily: 'Segoe Print', fontSize: (scrollPosition / 1000 + 1.6) + 'vw', top: 35.5 - scrollPosition / 50 + 'vh'}}>MY - Productions</small>
+            <small className={'bodyTitle_main'} style={{fontSize: (scrollPosition / 1000 + 1.3) + 'vw', top: 40.6 - scrollPosition / 55 + 'vh'}}>"חלומות שהופכים מציאות"</small>
+            <Animator style={{height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}} animation={FadeUp}>
                 <small className={'bodyText_main'}>הפקות אירועים | השכרת ציוד לאירועים | ניהול אירועים</small>
                 <button className={'eventButton_main'}>בואו ונגשים פנטזיות</button>
-            </div>
-            <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: '2vh'}}>
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <small className={'contactUs_main'}>צור קשר</small>
-                    <img className={'arrowsDown_main'} src={arrowsDown} alt={'contact'}/>
-                </div>
-            </button>
-        </Animator>
+                <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: '2vh', width: '100%', justifyContent: 'center', display: 'flex'}}>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                        <small className={'contactUs_main'}>צור קשר</small>
+                        <img className={'arrowsDown_main'} src={arrowsDown} alt={'contact'}/>
+                    </div>
+                </button>
+            </Animator>
+        </div>
     </ScrollPage>
 }
 
@@ -61,9 +77,10 @@ function BottomPart() {
 
 export default function MainPage()
 {
+    // const [divRef, scrollPercentage] = useScrollPercentage({threshold: 0});
     return <div className={'container_main'}>
         <ScrollContainer>
-            <TopPart/>
+            <TopPart scroll={'scrollPercentage'}/>
             <BottomPart/>
         </ScrollContainer>
         <TopBar/>
