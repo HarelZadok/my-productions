@@ -14,17 +14,17 @@ const extra = {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth: '350px',
+    maxWidth: '20vw',
 }
 
 const extraText = {
     color: '#A79737',
-    fontSize: '35px',
+    fontSize: '1vw',
     textAlign: 'center',
-    width: '300px',
+    width: '20vw'
 }
 
 const extraImage = {
-    width: '130px',
-    height: '130px'
+    width: '6vw',
+    height: '6vw',
 }

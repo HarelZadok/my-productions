@@ -16,7 +16,7 @@ function TopPart() {
                 <small className={'bodyText_main'}>הפקות אירועים | השכרת ציוד לאירועים | ניהול אירועים</small>
                 <button className={'eventButton_main'}>בואו ונגשים פנטזיות</button>
             </div>
-            <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: 20}}>
+            <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: '2vh'}}>
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <small className={'contactUs_main'}>צור קשר</small>
                     <img className={'arrowsDown_main'} src={arrowsDown} alt={'contact'}/>
