@@ -90,3 +90,21 @@
     height: 33vh;
     width: 18vw;
 }
+
+.bubbleTextContainer_contact {
+    position: absolute;
+    background-color: black;
+    border-radius: 20vw;
+    width: 14vw;
+    height: 7vh;
+    left: 1.2vw;
+    top: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bubbleText_contact {
+    color: #A79737;
+    font-size: 1.5vw;
+}

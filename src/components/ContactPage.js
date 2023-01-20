@@ -4,6 +4,8 @@ import React, {useState} from "react";
 import {isMobile} from "react-device-detect";
 
 export default function ContactPage() {
+    const [phoneVisible, setPhoneVisible] = useState(false);
+
     const [values, setValues] = useState({});
     const handleChange = e => {
         const { id, value } = e.target;
@@ -24,9 +26,10 @@ export default function ContactPage() {
                                                                  src={require('../resources/instagram.png')}/></button>
                 <button onClick={() => {window.location.href = 'mailto:my-productions@outlook.com'}} className={'contactButton_contact'}><img className={'contactImage_contact'} alt={'email'}
                                                                  src={require('../resources/email.png')}/></button>
-                <button onClick={() => {alert('משה מורנו:\n+972 58-623-8000')}} className={'contactButton_contact'}><img className={'contactImage_contact'} alt={'phone'}
+                {phoneVisible && <BubbleText text={'+972 58-623-8000'}/>}
+                <button onClick={() => {window.location.href = 'tel:+972586238000'}} onMouseLeave={() => {setPhoneVisible(false)}} onMouseOver={() => {setPhoneVisible(true)}} className={'contactButton_contact'}><img className={'contactImage_contact'} alt={'phone'}
                                                                  src={require('../resources/phone.png')}/></button>
-                <button onClick={() => {window.location.href = 'https://wa.me/+972586238000'}} className={'contactButton_contact'}><img className={'contactImage_contact'} alt={'whatsapp'}
+                <button onClick={() => {window.open('https://wa.me/+972586238000', '_blank')}} className={'contactButton_contact'}><img className={'contactImage_contact'} alt={'whatsapp'}
                                                                  src={require('../resources/whatsapp.png')}/></button>
             </div>
             <div className={'contactUs_contact'}>
@@ -47,6 +50,13 @@ export default function ContactPage() {
             </div>
         </div>
         <TopBar/>
+    </div>
+}
+
+function BubbleText({text})
+{
+    return <div className={'bubbleTextContainer_contact'}>
+        <span className={'bubbleText_contact'}>{text}</span>
     </div>
 }
 

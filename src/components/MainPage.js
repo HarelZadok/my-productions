@@ -4,7 +4,6 @@ import Extra from "./Extra";
 import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
-import useScrollPercentage from "../ScrollPercentage";
 import {isMobile} from "react-device-detect";
 import { initializeApp } from "firebase/app";
 
@@ -22,11 +21,10 @@ const app = initializeApp(firebaseConfig);
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
-function TopPart({scroll}) {
+function TopPart() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = () => {
-        const position = window.scrollY;
-        setScrollPosition(position);
+        setScrollPosition(getScrollPercent());
     };
 
     useEffect(() => {
@@ -39,8 +37,8 @@ function TopPart({scroll}) {
 
     return <ScrollPage>
         <div className={'body_main'}>
-            <small className={'bodyTitle_main'} style={{fontFamily: 'Segoe Print', fontSize: (scrollPosition / 1000 + 1.6) + 'vw', top: 35.5 - scrollPosition / 50 + 'vh'}}>MY - Productions</small>
-            <small className={'bodyTitle_main'} style={{fontSize: (scrollPosition / 1000 + 1.3) + 'vw', top: 40.6 - scrollPosition / 55 + 'vh'}}>"חלומות שהופכים מציאות"</small>
+            <small className={'bodyTitle_main'} style={{fontFamily: 'Segoe Print', fontSize: (scrollPosition / 100 + 1.6) + 'vw', top: 35.5 - scrollPosition / 5 + 'vh'}}>MY - Productions</small>
+            <small className={'bodyTitle_main'} style={{fontSize: (scrollPosition / 100 + 1.3) + 'vw', top: (40.6 - scrollPosition / 5.5) + 'vh'}}>"חלומות שהופכים מציאות"</small>
             <Animator style={{height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}} animation={FadeUp}>
                 <small className={'bodyText_main'}>הפקות אירועים | השכרת ציוד לאירועים | ניהול אירועים</small>
                 <button className={'eventButton_main'}>בואו ונגשים פנטזיות</button>
@@ -53,6 +51,14 @@ function TopPart({scroll}) {
             </Animator>
         </div>
     </ScrollPage>
+}
+
+function getScrollPercent() {
+    const h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
 }
 
 function BottomPart() {
@@ -90,16 +96,13 @@ function BottomPart() {
 
 export default function MainPage()
 {
-    const [divRef, scrollPercentage] = useScrollPercentage();
-
     if (isMobile) {
         return <h1>Mobile version TBD</h1>
     }
 
-    console.log(scrollPercentage);
-    return <div className={'container_main'} ref={divRef}>
+    return <div className={'container_main'}>
         <ScrollContainer>
-            <TopPart scroll={scrollPercentage}/>
+            <TopPart/>
             <BottomPart/>
         </ScrollContainer>
         <TopBar/>
