@@ -4,7 +4,21 @@ import Extra from "./Extra";
 import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
-// import {useScrollPercentage} from "react-scroll-percentage";
+import useScrollPercentage from "../ScrollPercentage";
+import {isMobile} from "react-device-detect";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAaMCY0yZdokziRokpqwJGi5o7z8MgyfLU",
+    authDomain: "my-productions-43588.firebaseapp.com",
+    projectId: "my-productions-43588",
+    storageBucket: "my-productions-43588.appspot.com",
+    messagingSenderId: "637715081214",
+    appId: "1:637715081214:web:fc3a306576090ff0d782af",
+    measurementId: "G-PEHWK5CW27"
+};
+
+const app = initializeApp(firebaseConfig);
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
@@ -13,7 +27,6 @@ function TopPart({scroll}) {
     const handleScroll = () => {
         const position = window.scrollY;
         setScrollPosition(position);
-        console.log(scroll.toPrecision(2))
     };
 
     useEffect(() => {
@@ -77,10 +90,16 @@ function BottomPart() {
 
 export default function MainPage()
 {
-    // const [divRef, scrollPercentage] = useScrollPercentage({threshold: 0});
-    return <div className={'container_main'}>
+    const [divRef, scrollPercentage] = useScrollPercentage();
+
+    if (isMobile) {
+        return <h1>Mobile version TBD</h1>
+    }
+
+    console.log(scrollPercentage);
+    return <div className={'container_main'} ref={divRef}>
         <ScrollContainer>
-            <TopPart scroll={'scrollPercentage'}/>
+            <TopPart scroll={scrollPercentage}/>
             <BottomPart/>
         </ScrollContainer>
         <TopBar/>

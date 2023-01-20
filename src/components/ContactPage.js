@@ -1,6 +1,7 @@
 import './ContactPage.css'
 import TopBar from "./TopBar";
 import React, {useState} from "react";
+import {isMobile} from "react-device-detect";
 
 export default function ContactPage() {
     const [values, setValues] = useState({});
@@ -50,27 +51,43 @@ export default function ContactPage() {
 }
 
 function CustomInput(props) {
-    return <div style={
-        {
-            backgroundColor: '#FFFFFF',
-            borderStyle: "solid",
-            borderWidth: '0.24vw',
-            borderColor: '#c4a81a',
-            borderRadius: '1vw',
-            paddingInline: '1vw',
-            paddingBlock: '1vh',
-            boxSizing: 'border-box',
-            width: '16vw',
-            height: props.height,
-            display: 'flex',
-            flexDirection: !props.multiline ? 'row-reverse' : 'column',
-            alignItems: !props.multiline ? 'center' : 'flex-end',
-        }}>
-        <label htmlFor={props.id} style={{letterSpacing: '.001vw', color: '#c4a81a', fontWeight: 'bold', direction: 'rtl', fontSize: '1.2vw', marginLeft: '.5vw', whiteSpace: 'nowrap'}}>{props.title}</label>
-        {
-            props.multiline ?
-                <textarea onChange={props.handleChange} id={props.id} style={{direction: props.rtl ? 'rtl' : 'ltr'}} className={'input_contact'}/> :
-                <input onChange={props.handleChange} id={props.id} style={{direction: props.rtl ? 'rtl' : 'ltr'}} className={'input_contact'} type={props.type ? props.type : 'text'}/>
-        }
-    </div>
+    if (isMobile) {
+        window.location.href = '/mobile';
+        return <div></div>;
+    }
+    else {
+        return <div style={
+            {
+                backgroundColor: '#FFFFFF',
+                borderStyle: "solid",
+                borderWidth: '0.24vw',
+                borderColor: '#c4a81a',
+                borderRadius: '1vw',
+                paddingInline: '1vw',
+                paddingBlock: '1vh',
+                boxSizing: 'border-box',
+                width: '16vw',
+                height: props.height,
+                display: 'flex',
+                flexDirection: !props.multiline ? 'row-reverse' : 'column',
+                alignItems: !props.multiline ? 'center' : 'flex-end',
+            }}>
+            <label htmlFor={props.id} style={{
+                letterSpacing: '.001vw',
+                color: '#c4a81a',
+                fontWeight: 'bold',
+                direction: 'rtl',
+                fontSize: '1.2vw',
+                marginLeft: '.5vw',
+                whiteSpace: 'nowrap'
+            }}>{props.title}</label>
+            {
+                props.multiline ?
+                    <textarea onChange={props.handleChange} id={props.id} style={{direction: props.rtl ? 'rtl' : 'ltr'}}
+                              className={'input_contact'}/> :
+                    <input onChange={props.handleChange} id={props.id} style={{direction: props.rtl ? 'rtl' : 'ltr'}}
+                           className={'input_contact'} type={props.type ? props.type : 'text'}/>
+            }
+        </div>
+    }
 }
