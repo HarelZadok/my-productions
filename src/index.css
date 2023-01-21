@@ -20,8 +20,22 @@ code {
 }
 
 @font-face {
-  font-family: "Segoe Print";
+  font-family: "Segoe Print Bold";
   src: local("SegoePrint"),
   url("./fonts/segoeprb.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: local("SegoeUI"),
+  url("./fonts/segoeui.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: local("SegoeUI"),
+  url("./fonts/segoeuib.ttf") format("truetype");
   font-weight: bold;
 }

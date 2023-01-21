@@ -3,7 +3,7 @@
     letter-spacing: .01vw;
 }
 
-.container_main {
+.container_main_d {
     display: flex;
     flex-direction: column;
     max-width: 100%;
@@ -14,7 +14,7 @@
     background-attachment: fixed;
 }
 
-.body_main {
+.body_main_d {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,24 +23,24 @@
     height: 100vh;
 }
 
-.bodyText_main {
+.bodyText_main_d {
     font-size: 1.4vw;
     color: #FFFFFF;
     font-weight: bold;
-    -webkit-text-stroke: .05em black;
+    -webkit-text-stroke: .012em black;
     text-align: center;
 }
 
-.bodyTitle_main {
+.bodyTitle_main_d {
     font-size: 1.4vw;
     color: #FFFFFF;
     font-weight: bold;
-    -webkit-text-stroke: .05em black;
+    -webkit-text-stroke: .012em black;
     text-align: center;
     position: fixed;
 }
 
-.eventButton_main {
+.eventButton_main_d {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,11 +57,11 @@
     cursor: pointer;
 }
 
-.eventButton_main:hover {
+.eventButton_main_d:hover {
     background-color: #c4a81a;
 }
 
-.contactUs_main {
+.contactUs_main_d {
     display: flex;
     color: #FFFFFF;
     -webkit-text-stroke: .05em black;
@@ -70,7 +70,7 @@
     letter-spacing: .01vw;
 }
 
-.arrowsDown_main {
+.arrowsDown_main_d {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +92,7 @@
     }
 }
 
-.footer_main {
+.footer_main_d {
     display: flex;
     height: 100%;
     flex-direction: row-reverse;
@@ -100,7 +100,7 @@
     align-items: flex-end;
 }
 
-.extras_main {
+.extras_main_d {
     width: 40vw;
     height: 65vh;
     background-color: black;
@@ -113,14 +113,14 @@
     margin-right: 1vh;
 }
 
-.extraList_main {
+.extraList_main_d {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.contact_main {
+.contact_main_d {
     display: flex;
     flex-direction: row;
     width: 20vw;
@@ -133,12 +133,12 @@
     margin-bottom: 1vh;
 }
 
-.contactImage_main {
+.contactImage_main_d {
     height: auto;
     width: 3vw;
 }
 
-.contactButton_main {
+.contactButton_main_d {
     background-color: #FFFFFF00;
     border-width: 0;
     height: auto;
@@ -147,7 +147,106 @@
     padding: 0;
 }
 
-.contactButton_main:hover {
+.contactButton_main_d:hover {
     cursor: pointer;
     opacity: 70%;
+}
+
+.container_main_m {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../resources/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.topBar_main_m {
+    background-color: black;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 40px;
+    align-items: center;
+}
+
+.drawerButton_main_m {
+    background-color: #FFFFFF00;
+    border-width: 0;
+    padding: 0;
+    margin-left: 6vw;
+}
+
+.drawer_main_m {
+    height: 30%;
+    width: auto;
+}
+
+.body_main_m {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.bodyText_main_m {
+    font-size: 25px;
+    color: #FFFFFF;
+    font-weight: bold;
+    -webkit-text-stroke: .02em black;
+    text-align: center;
+    direction: rtl;
+    align-self: flex-end;
+    margin-right: 12vw;
+    font-family: "Segoe UI Bold", serif;;
+}
+
+.bodyTitle_main_m {
+    font-size: 30px;
+    color: #FFFFFF;
+    font-weight: bold;
+    -webkit-text-stroke: .02em black;
+    text-align: center;
+}
+
+.eventButton_main_m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 70vw;
+    max-width: 350px;
+    background-color: #A79737;
+    color: #FFFFFF;
+    border: .05em solid #707070;
+    border-radius: 20vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.001vw;
+    cursor: pointer;
+}
+
+.logoContainer_main_m {
+    overflow: hidden;
+    border-radius: 100%;
+    height: 125px;
+    width: 125px;
+    position: absolute;
+    right: 4vw;
+}
+
+.logo_main_m {
+    height: 125px;
+    width: 125px;
+    transform: scale(1.3);
 }
