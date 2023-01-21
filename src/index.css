@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Segoe Print";
+  src: local("SegoePrint"),
+  url("./fonts/segoepr.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Segoe Print";
+  src: local("SegoePrint"),
+  url("./fonts/segoeprb.ttf") format("truetype");
+  font-weight: bold;
+}
