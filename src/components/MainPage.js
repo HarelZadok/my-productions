@@ -5,6 +5,7 @@ import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPag
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
 import {isMobile} from "react-device-detect";
+import TopBar_M from "./TopBar_M";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
@@ -31,7 +32,7 @@ function TopPart() {
                 <button className={'eventButton_main_d'}>בואו ונגשים פנטזיות</button>
                 <button onClick={scrollToBottom} style={{backgroundColor: '#FFFFFF00', borderWidth: 0, cursor: 'pointer', position: 'absolute', bottom: '2vh', width: '100%', justifyContent: 'center', display: 'flex'}}>
                     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                        <small className={'contactUs_main_d'}>צור קשר</small>
+                        <small className={'contactUs_main_d'}>פרטים</small>
                         <img className={'arrowsDown_main_d'} src={arrowsDown} alt={'contact'}/>
                     </div>
                 </button>
@@ -85,14 +86,7 @@ export default function MainPage()
 {
     if (isMobile)
         return <div className={'container_main_m'}>
-            <div className={'topBar_main_m'}>
-                <button onClick={alert} className={'drawerButton_main_m'}>
-                    <img src={require('../resources/drawer.png')} alt={'drawer'} className={'drawer_main_m'}/>
-                </button>
-                <div className={'logoContainer_main_m'}>
-                    <img src={require('../resources/logo1.png')} alt={'logo'} className={'logo_main_m'}/>
-                </div>
-            </div>
+            <TopBar_M/>
             <div className={'body_main_m'}>
                 <small className={'bodyTitle_main_m'} style={{fontFamily: 'Segoe Print Bold', top: '5vh'}}>MY - Productions</small>
                 <small className={'bodyTitle_main_m'} style={{top: '5vh'}}>"חלומות שהופכים מציאות"</small>

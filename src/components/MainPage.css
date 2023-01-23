@@ -26,16 +26,16 @@
 .bodyText_main_d {
     font-size: 1.4vw;
     color: #FFFFFF;
-    font-weight: bold;
-    -webkit-text-stroke: .012em black;
+    font-weight: normal;
+    -webkit-text-stroke: .03em black;
     text-align: center;
 }
 
 .bodyTitle_main_d {
     font-size: 1.4vw;
     color: #FFFFFF;
-    font-weight: bold;
-    -webkit-text-stroke: .012em black;
+    font-weight: normal;
+    -webkit-text-stroke: .03em black;
     text-align: center;
     position: fixed;
 }
@@ -64,9 +64,9 @@
 .contactUs_main_d {
     display: flex;
     color: #FFFFFF;
-    -webkit-text-stroke: .05em black;
+    -webkit-text-stroke: .03em black;
     font-size: 1.3vw;
-    font-weight: bold;
+    font-weight: normal;
     letter-spacing: .01vw;
 }
 
@@ -164,29 +164,6 @@
     background-attachment: fixed;
 }
 
-.topBar_main_m {
-    background-color: black;
-    height: 75px;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    top: 40px;
-    align-items: center;
-}
-
-.drawerButton_main_m {
-    background-color: #FFFFFF00;
-    border-width: 0;
-    padding: 0;
-    margin-left: 6vw;
-}
-
-.drawer_main_m {
-    height: 30%;
-    width: auto;
-}
-
 .body_main_m {
     margin-top: 150px;
     display: flex;
@@ -200,7 +177,7 @@
 .bodyText_main_m {
     font-size: 25px;
     color: #FFFFFF;
-    font-weight: bold;
+    font-weight: normal;
     -webkit-text-stroke: .02em black;
     text-align: center;
     direction: rtl;
@@ -212,7 +189,7 @@
 .bodyTitle_main_m {
     font-size: 30px;
     color: #FFFFFF;
-    font-weight: bold;
+    font-weight: normal;
     -webkit-text-stroke: .02em black;
     text-align: center;
 }
@@ -234,19 +211,4 @@
     font-weight: bold;
     letter-spacing: 0.001vw;
     cursor: pointer;
-}
-
-.logoContainer_main_m {
-    overflow: hidden;
-    border-radius: 100%;
-    height: 125px;
-    width: 125px;
-    position: absolute;
-    right: 4vw;
-}
-
-.logo_main_m {
-    height: 125px;
-    width: 125px;
-    transform: scale(1.3);
 }
