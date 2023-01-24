@@ -3,6 +3,7 @@ import ContactPage from './components/ContactPage.js'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import { initializeApp } from "firebase/app";
+import AdminPage from "./components/AdminPage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAaMCY0yZdokziRokpqwJGi5o7z8MgyfLU",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: '/contact',
         element: <ContactPage/>,
+    },
+    {
+        path: '/admin',
+        element: <AdminPage/>
     }
 ]);
 

@@ -212,3 +212,32 @@
     letter-spacing: 0.001vw;
     cursor: pointer;
 }
+
+.contact_main_m {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 8vh;
+    background-color: black;
+    border-radius: 20vw;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 1vh;
+    margin-bottom: 1vh;
+    position: fixed;
+    bottom: 2vh;
+}
+
+.contactButton_main_m {
+    background-color: #FFFFFF00;
+    border-width: 0;
+    height: auto;
+    width: 16vw;
+    max-width: 16vw;
+    padding: 0;
+}
+
+.contactImage_main_m {
+    height: auto;
+    width: 11vw;
+}

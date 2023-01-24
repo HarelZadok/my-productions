@@ -1,6 +1,6 @@
-import './TopBar_M.css'
+import './TopBarM.css'
 
-export default function TopBar_M() {
+export default function TopBarM() {
     return <div className={'topBar_main_m'}>
         <button className={'drawerButton_main_m'}>
             <img src={require('../resources/drawer.png')} alt={'drawer'} className={'drawer_main_m'}/>

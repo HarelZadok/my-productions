@@ -5,7 +5,7 @@ import {Animator, batch, Fade, Move, MoveIn, MoveOut, ScrollContainer, ScrollPag
 import arrowsDown from '../resources/arrows-down.svg';
 import TopBar from "./TopBar";
 import {isMobile} from "react-device-detect";
-import TopBar_M from "./TopBar_M";
+import TopBarM from "./TopBarM";
 
 const FadeUp = batch(Fade(), Move(), Sticky());
 
@@ -86,7 +86,7 @@ export default function MainPage()
 {
     if (isMobile)
         return <div className={'container_main_m'}>
-            <TopBar_M/>
+            <TopBarM/>
             <div className={'body_main_m'}>
                 <small className={'bodyTitle_main_m'} style={{fontFamily: 'Segoe Print Bold', top: '5vh'}}>MY - Productions</small>
                 <small className={'bodyTitle_main_m'} style={{top: '5vh'}}>"חלומות שהופכים מציאות"</small>
@@ -94,6 +94,21 @@ export default function MainPage()
                 <small className={'bodyText_main_m'}>| הפקות אירועים</small>
                 <small className={'bodyText_main_m'}>| השכרת ציוד</small>
                 <small className={'bodyText_main_m'}>| ניהול אירועים</small>
+                <div className={'contact_main_m'}>
+                    <button className={'contactButton_main_m'}><img className={'contactImage_main_m'} alt={'facebook'} src={require('../resources/facebook.png')}/></button>
+                    <button onClick={() => {window.open('https://instagram.com/_myproduction?igshid=YmMyMTA2M2Y=', '_blank')}} className={'contactButton_main_m'}>
+                        <img className={'contactImage_main_m'} alt={'instagram'} src={require('../resources/instagram.png')}/>
+                    </button>
+                    <button onClick={() => {window.location.href = 'mailto:my-productions@outlook.com'}} className={'contactButton_main_m'}>
+                        <img className={'contactImage_main_m'} alt={'email'} src={require('../resources/email.png')}/>
+                    </button>
+                    <button onClick={() => {window.location.href = 'tel:+972586238000'}} className={'contactButton_main_m'}>
+                        <img className={'contactImage_main_m'} alt={'phone'} src={require('../resources/phone.png')}/>
+                    </button>
+                    <button onClick={() => {window.open('https://api.whatsapp.com/send?phone=9720586238000&text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%9E%D7%A9%D7%94%20%2C%20%D7%9C%D7%92%D7%91%D7%99%20%D7%A0%D7%99%D7%94%D7%95%D7%9C%20%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D%20%D7%95%D7%94%D7%A4%D7%A7%D7%95%D7%AA%20%20%2C%20%D7%A9%D7%9E%D7%99%20-%20%0A%D7%90%D7%A9%D7%9E%D7%97%20%D7%A9%D7%AA%D7%97%D7%96%D7%95%D7%A8%20%D7%90%D7%9C%D7%99%20%0A*%D7%AA%D7%95%D7%9B%D7%9F%20%D7%94%D7%94%D7%95%D7%93%D7%A2%D7%94*', '_blank')}} className={'contactButton_main_m'}>
+                        <img className={'contactImage_main_m'} alt={'whatsapp'} src={require('../resources/whatsapp.png')}/>
+                    </button>
+                </div>
             </div>
         </div>
     else
